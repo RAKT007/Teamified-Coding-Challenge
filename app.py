@@ -262,62 +262,6 @@ def _compact_snippet(text: str, max_len: int = 220) -> str:
     return t[:max_len] + ("..." if len(t) > max_len else "")
 
 
-# -----------------------------
-# CLI main
-# -----------------------------
-# def main():
-#     # Load .env if present (safe; evaluator can still use real env vars)
-#     load_dotenv()
-
-#     cfg = load_config_from_env()
-
-#     # GROQ_API_KEY is required
-#     groq_key = os.getenv("GROQ_API_KEY", "").strip()
-#     if not groq_key:
-#         raise RuntimeError(
-#             "Missing GROQ_API_KEY.\n"
-#             "Create a .env file with GROQ_API_KEY=... or set it in your environment."
-#         )
-
-#     parser = argparse.ArgumentParser(description="RAG CLI (FAISS + Groq) over philippine_history.pdf")
-#     parser.add_argument("--query", "-q", type=str, default=None, help="User query (if omitted, prompts interactively)")
-#     parser.add_argument("--top_k", type=int, default=cfg.top_k, help="How many chunks to retrieve")
-#     parser.add_argument("--rebuild_index", action="store_true", help="Delete FAISS cache and rebuild")
-#     args = parser.parse_args()
-
-#     # Optional rebuild
-#     if args.rebuild_index and os.path.exists(cfg.index_dir):
-#         import shutil
-#         shutil.rmtree(cfg.index_dir)
-
-#     user_q = (args.query or "").strip()
-#     if not user_q:
-#         user_q = input("User Query: ").strip()
-#     if not user_q:
-#         print("No query provided. Exiting.")
-#         return
-
-#     # 1) Load/build index
-#     vs = load_or_build_vectorstore(cfg)
-
-#     # 2) Intent detection
-#     intent = detect_intent_with_groq(groq_key, cfg.groq_model, user_q)
-
-#     # 3) Retrieval
-#     docs = vs.similarity_search(user_q, k=int(args.top_k))
-
-#     # 4) Answer
-#     ans = answer_with_groq(groq_key, cfg.groq_model, user_q, docs, intent)
-
-#     # ---- Print in sample-style format ----
-#     print(f"\nUser Query: {user_q}")
-#     print("Retrieved Chunks:")
-#     for d in docs:
-#         print(f'- "{_compact_snippet(d.page_content)}"')
-
-#     print("\nLLM Response:")
-#     print(ans)
-
 
 def main():
     load_dotenv()
@@ -368,4 +312,5 @@ def main():
             print(f"❌ Error: {str(e)}\n")
 
 if __name__ == "__main__":
+
     main()

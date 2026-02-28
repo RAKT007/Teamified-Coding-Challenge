@@ -64,7 +64,7 @@ philippine_history.pdf
 
 ---
 
-## ▶️ Run the Application
+## ▶️ Run the Application  -" Please wait for some duration while running the code for the first time "
 
 ```bash
 python app.py

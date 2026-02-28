@@ -262,6 +262,9 @@ def _compact_snippet(text: str, max_len: int = 220) -> str:
     return t[:max_len] + ("..." if len(t) > max_len else "")
 
 
+# -----------------------------
+# CLI main
+# -----------------------------
 
 def main():
     load_dotenv()
@@ -314,3 +317,4 @@ def main():
 if __name__ == "__main__":
 
     main()
+

@@ -50,7 +50,7 @@ Add groq_api_key in the `.env` file:
 GROQ_API_KEY=your_api_key_here
 ```
 
-(Optional)
+Place the pdf file (if not present) in the root folder 
 
 ```bash
 PDF_PATH=philippine_history.pdf

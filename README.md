@@ -64,7 +64,7 @@ philippine_history.pdf
 
 ---
 
-## ▶️ Run the Application  -" Please wait for some duration while running the code for the first time "
+## ▶️ Run the Application  -" Please wait for some duration while running the code for the first time - Till input query seen on the screen "
 
 ```bash
 python app.py

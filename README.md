@@ -67,7 +67,7 @@ philippine_history.pdf
 ## ▶️ Run the Application
 
 ```bash
-python run.py
+python app.py
 ```
 
 Example:

@@ -1,4 +1,4 @@
-# 🚀 RAG PDF Chatbot (AI Context Builder)
+#  RAG PDF Chatbot (AI Context Builder)
 
 This project implements a **Retrieval-Augmented Generation (RAG)** pipeline over a PDF document.  
 It allows users to ask questions in natural language and get answers grounded in the document.
